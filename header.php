@@ -30,38 +30,30 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+    	<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+	    <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	        Menu
+	    	<i class="fas fa-bars"></i>
+	    </button>
+
+	    <?php
+	        wp_nav_menu([
+	            'menu'            => 'primary',
+	            'theme_location'  => 'menu-1',
+	            'container'       => 'div',
+	            'container_id'    => 'navbarResponsive',
+	            'container_class' => 'collapse navbar-collapse',
+	            'menu_id'         => false,
+	            'menu_class'      => 'navbar-nav ml-auto',
+	            'depth'           => 0,
+	            'fallback_cb'     => 'bs4navwalker::fallback',
+	            'walker'          => new bs4navwalker()
+	        ]);
+	    ?>
+    </div>
+</nav>
+
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'onko-theme' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$onko_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $onko_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $onko_theme_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'onko-theme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
