@@ -156,5 +156,80 @@ $about_button_link = get_field('button_field_link');
 <!-- EOF CONTACT SECTION -->
 
 <?php
+$footer_location_header = get_field('footer_location_header');
+$footer_location_details = get_field('footer_location_details');
+$footer_social_header = get_field('footer_social_header');
+$footer_about_header = get_field('footer_about_header');
+$footer_about_details = get_field('footer_about_details');
+$footer_about_link_text = get_field('footer_about_link_text');
+$footer_about_link_url = get_field('footer_about_link_url');
+?>
+<footer class="footer text-center">
+    <div class="container">
+		<div class="row">
+
+		<!-- Footer Location -->
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<h4 class="text-uppercase mb-4"><?php echo $footer_location_header ?></h4>
+				<p class="lead mb-0"><?php echo $footer_location_details ?></p>
+			</div>
+
+			<!-- Footer Social Icons -->
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<h4 class="text-uppercase mb-4"><?php echo $footer_social_header ?></h4>
+				<a class="btn btn-outline-light btn-social mx-1" href="#">
+					<i class="fab fa-fw fa-facebook-f"></i>
+				</a>
+				<a class="btn btn-outline-light btn-social mx-1" href="#">
+					<i class="fab fa-fw fa-twitter"></i>
+				</a>
+				<a class="btn btn-outline-light btn-social mx-1" href="#">
+					<i class="fab fa-fw fa-linkedin-in"></i>
+				</a>
+				<a class="btn btn-outline-light btn-social mx-1" href="#">
+					<i class="fab fa-fw fa-dribbble"></i>
+				</a>
+			</div>
+
+			<!-- Footer About Text -->
+			<div class="col-lg-4">
+				<h4 class="text-uppercase mb-4"><?php echo $footer_about_header ?></h4>
+				<p class="lead mb-0"><?php echo $footer_about_details ?>
+				<a href="<?php echo $footer_about_link_url ?>"><?php echo $footer_about_link_text ?></a>.</p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<section class="copyright py-4 text-center text-white">
+    <div class="container">
+    	<small>Copyright &copy;<?php echo bloginfo('name') ?> <?php echo date('Y') ?></small>
+    </div>
+</section>
+
+
+	<!-- <div id="primary" class="content-area"> -->
+		<!-- <main id="main" class="site-main"> -->
+
+		<?php
+		// while ( have_posts() ) :
+			// the_post();
+
+			// get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			// if ( comments_open() || get_comments_number() ) :
+				// comments_template();
+			// endif;
+
+		// endwhile; // End of the loop.
+		?>
+
+		<!-- </main>#main -->
+	<!-- </div>#primary -->
+
+<?php
 // get_sidebar();
+
 get_footer();
