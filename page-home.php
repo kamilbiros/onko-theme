@@ -47,6 +47,44 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 </header>
 
 
+<!-- PORTFOLIO SECTION -->
+<section class="page-section portfolio" id="portfolio">
+	<div class="container">
+
+		<!-- Portfolio Section Heading -->
+		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+
+		<!-- Icon Divider -->
+		<div class="divider-custom">
+			<div class="divider-custom-line"></div>
+			<div class="divider-custom-icon">
+				<i class="fas fa-star"></i>
+			</div>
+			<div class="divider-custom-line"></div>
+		</div>
+
+		<!-- Portfolio Grid Items -->
+		<div class="row">
+			<?php $loop = new WP_Query(array('post_type'=>'portfolio', 'order_by'=>'post_id','order'=>'ASC'));?>
+            <?php while($loop->have_posts()) : $loop->the_post();?>
+                <div class="col-md-6 col-lg-4">
+					<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolio-modal-<?php the_ID(); ?>">
+						<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+							<div class="portfolio-item-caption-content text-center text-white">
+							    <i class="fas fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<img class="img-fluid" src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+					</div>
+		        </div>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+		</div>
+	</div>
+</section>
+
+<!-- EOF PORTFOLIO SECTION -->
+
 <?php
 // get_sidebar();
 get_footer();
