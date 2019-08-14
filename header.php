@@ -17,6 +17,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+
+	<!-- Custom Fonts -->
+	<link href="<?php bloginfo('stylesheet_directory')?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- Theme CSS -->
+	<link href="<?php bloginfo('stylesheet_directory')?>/css/freelancer.min.css" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
