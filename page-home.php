@@ -84,6 +84,51 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 </section>
 
 <!-- EOF PORTFOLIO SECTION -->
+<!-- ABOUT SECTION -->
+<?php
+$about_section_left = get_field('about_text_left');
+$about_section_right = get_field('about_text_right');
+$about_button_text = get_field('button_text');
+$about_button_link = get_field('button_field_link');
+?>
+
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Content -->
+      <div class="row">
+        <div class="col-lg-4 ml-auto">
+          <p class="lead"><?php echo $about_section_left; ?></p>
+        </div>
+        <div class="col-lg-4 mr-auto">
+          <p class="lead"><?php echo $about_section_right; ?></p>
+        </div>
+      </div>
+
+      <!-- About Section Button -->
+      <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-light" href="<?php echo $about_button_link; ?>">
+          <i class="fas fa-download mr-2"></i>
+          <?php echo $about_button_text; ?>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+<!-- EOF ABOUT SECTION -->
 
 <?php
 // get_sidebar();
